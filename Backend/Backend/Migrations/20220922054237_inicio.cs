@@ -4,7 +4,7 @@
 
 namespace Backend.Migrations
 {
-    public partial class firstMig : Migration
+    public partial class inicio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,7 @@ namespace Backend.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    document = table.Column<string>(type: "varchar(15)", nullable: false),
                     firstName = table.Column<string>(type: "varchar(25)", nullable: false),
                     secondName = table.Column<string>(type: "varchar(25)", nullable: false),
                     lastName = table.Column<string>(type: "varchar(25)", nullable: false),
@@ -21,7 +22,7 @@ namespace Backend.Migrations
                     phone = table.Column<string>(type: "varchar(15)", nullable: false),
                     email = table.Column<string>(type: "varchar(40)", nullable: false),
                     address = table.Column<string>(type: "varchar(40)", nullable: false),
-                    age = table.Column<byte>(type: "tinyint", nullable: false),
+                    age = table.Column<int>(type: "int", nullable: false),
                     genre = table.Column<string>(type: "varchar(10)", nullable: false)
                 },
                 constraints: table =>

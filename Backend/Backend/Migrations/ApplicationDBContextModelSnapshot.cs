@@ -33,8 +33,12 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(40)");
 
-                    b.Property<byte>("age")
-                        .HasColumnType("tinyint");
+                    b.Property<int>("age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("document")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("email")
                         .IsRequired()

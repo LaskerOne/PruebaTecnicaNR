@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20220921025008_firstMig")]
-    partial class firstMig
+    [Migration("20220922054237_inicio")]
+    partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,8 +35,12 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(40)");
 
-                    b.Property<byte>("age")
-                        .HasColumnType("tinyint");
+                    b.Property<int>("age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("document")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("email")
                         .IsRequired()

@@ -1,0 +1,133 @@
+<!--Formulario de recolección de datos-->
+<form [formGroup]="form" (ngSubmit)="sendForm()">
+    <!--campo documento-->
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg.white">
+                    <i class="fas fa-id-card" [class.green-icon]="this.form.get('document').valid"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" formControlName="document" placeholder="Identity Document">
+        </div>
+    </div>
+
+<!--campo primer nombre-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-user-circle" [class.green-icon]="this.form.get('firstName').valid"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="first Name">
+    </div>
+</div>
+
+<!--campo segundo nombre-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="secondName" placeholder="second Name">
+    </div>
+</div>
+
+<!--campo primer apellido-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-user-circle" [class.green-icon]="this.form.get('lastName').valid"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="lastName" placeholder="last Name">
+    </div>
+</div>
+<!--Campo segundo apellido-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-user-circle" [class.green-icon]="this.form.get('lastName2').valid"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="lastName2" placeholder="last Name">
+    </div>
+</div>
+<!--Campo telefono-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-mobile"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="phone" placeholder="phone number">
+    </div>
+</div>
+<!--campo email-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-at"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="email" placeholder="email">
+    </div>
+</div>
+<!--campo dirección-->
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg.white">
+                <i class="fas fa-map-marker" [class.green-icon]="this.form.get('address').valid"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" formControlName="address" placeholder="address">
+    </div>
+</div>
+
+<div class="row">
+    <!--campo edad-->
+    <div class="form-group col-md-5">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg.white">
+                        <i class="fas fa-child" [class.green-icon]="this.form.get('age').valid"></i>
+                    </div>
+                </div>
+                <input type="number" min="15" max="80" class="form-control" formControlName="age" placeholder="age">
+            </div>
+        </div>
+    </div>
+    <!--campo genero-->
+    <div class="form-group col-md-7">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg.white">
+                        <i class="fas fa-venus-mars" [class.green-icon]="this.form.get('genre').valid"></i>
+                    </div>
+                </div>
+                <select class="form-control" formControlName="genre" placeholder="gender">
+                    <option value="ChooseOne" selected disabled> Choose One </option>
+                    <option value="Male"> Male </option>
+                    <option value="Female"> Female </option>
+                    <option value="noBinary"> I prefer not to say </option>
+                    <option value="Other"> Other </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Boton-->
+<div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Ingresar</button>
+</div>
+</form>

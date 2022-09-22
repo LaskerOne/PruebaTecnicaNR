@@ -12,6 +12,10 @@ namespace Backend.Models
         public int Id { get; set; }
 
         [Required]
+        [Column(TypeName = "varchar(15)")]
+        public string document { get; set; }
+
+        [Required]
         [Column(TypeName = "varchar(25)")]
         public string firstName { get; set; }
 
@@ -36,7 +40,7 @@ namespace Backend.Models
         public string address { get; set;}
 
         [Required]
-        public byte age { get; set; }
+        public int age { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(10)")]

@@ -10,7 +10,7 @@ using Backend.Models;
 
 namespace Backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/UsersBCcont")]
     [ApiController]
     public class UsersBCcont : ControllerBase
     {
