@@ -52,10 +52,10 @@
     <div class="input-group">
         <div class="input-group-prepend">
             <div class="input-group-text bg.white">
-                <i class="fas fa-user-circle" [class.green-icon]="this.form.get('lastName2').valid"></i>
+                <i class="fas fa-user-circle"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="lastName2" placeholder="last Name">
+        <input type="text" class="form-control" formControlName="lastName2" placeholder="last Name" value="">
     </div>
 </div>
 <!--Campo telefono-->
@@ -66,7 +66,7 @@
                 <i class="fas fa-mobile"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="phone" placeholder="phone number">
+        <input type="text" class="form-control" formControlName="phone" placeholder="phone number" value="">
     </div>
 </div>
 <!--campo email-->
@@ -77,7 +77,7 @@
                 <i class="fas fa-at"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="email" placeholder="email">
+        <input type="text" class="form-control" formControlName="email" placeholder="email" value="">
     </div>
 </div>
 <!--campo dirección-->
@@ -102,7 +102,7 @@
                         <i class="fas fa-child" [class.green-icon]="this.form.get('age').valid"></i>
                     </div>
                 </div>
-                <input type="number" min="15" max="80" class="form-control" formControlName="age" placeholder="age">
+                <input type="number" min="15" max="80" class="form-control"  formControlName="age" placeholder="age">
             </div>
         </div>
     </div>
@@ -115,8 +115,7 @@
                         <i class="fas fa-venus-mars" [class.green-icon]="this.form.get('genre').valid"></i>
                     </div>
                 </div>
-                <select class="form-control" formControlName="genre" placeholder="gender">
-                    <option value="ChooseOne" selected disabled> Choose One </option>
+                <select class="form-control" formControlName="genre">
                     <option value="Male"> Male </option>
                     <option value="Female"> Female </option>
                     <option value="noBinary"> I prefer not to say </option>

@@ -1,1 +1,22 @@
-<p>view-form works!</p>
+<div class="container">
+    <table class="table table-sm">
+        <tr *ngFor="let register of  getService.list">
+            <td>{{register.document}}</td>
+            <td>{{register.firstName}}</td>
+            <td>{{register.secondName}}</td>
+            <td>{{register.lastName}}</td>
+            <td>{{register.lastName2}}</td>
+            <td>{{register.phone}}</td>
+            <td>{{register.email}}</td>
+            <td>{{register.address}}</td>
+            <td>{{register.age}}</td>
+            <td>{{register.genre}}</td>
+            <td>
+                <i class="far fa-edit fa-lg text-info" (click)="editUser(user)" style="cursor: pointer"></i>
+            </td>
+            <td>
+                <i class="far fa-trash-alt fa-lg text-danger" (click)="deleteUser(register.id)" style="cursor: pointer"></i>
+            </td>
+        </tr>
+    </table>
+</div>

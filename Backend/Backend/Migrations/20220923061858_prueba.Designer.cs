@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20220922054237_inicio")]
-    partial class inicio
+    [Migration("20220923061858_prueba")]
+    partial class prueba
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,7 @@ namespace Backend.Migrations
 
                     b.Property<string>("address")
                         .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("varchar(40)");
 
                     b.Property<int>("age")
@@ -40,6 +41,7 @@ namespace Backend.Migrations
 
                     b.Property<string>("document")
                         .IsRequired()
+                        .HasMaxLength(15)
                         .HasColumnType("varchar(15)");
 
                     b.Property<string>("email")
@@ -48,14 +50,16 @@ namespace Backend.Migrations
 
                     b.Property<string>("firstName")
                         .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("varchar(25)");
 
                     b.Property<string>("genre")
                         .IsRequired()
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("lastName")
                         .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("varchar(25)");
 
                     b.Property<string>("lastName2")
