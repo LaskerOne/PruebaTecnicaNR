@@ -38,9 +38,9 @@ export class DataFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.suscription = this.userServ.getRegisterToUpdate().subscribe(data => {
-      console.log(data);
-      this.usuario = data;
+    this.suscription = this.userServ.getRegisterToUpdate().subscribe(dataO => {
+      console.log(dataO);
+      this.usuario = dataO;
       this.form.patchValue({
         document: this.usuario.document,
         firstName: this.usuario.firstName,
@@ -53,10 +53,20 @@ export class DataFormComponent implements OnInit, OnDestroy {
         age: this.usuario.age,
         genre: this.usuario.genre
       });
+      this.idUsuario = this.usuario.id;
     });
   }
 
   sendForm() {
+    if(this.idUsuario === 0){
+      this.addUser();
+    }
+    else {
+      this.editUser();
+    }
+  }
+
+  addUser() {
     const userInfo: modDataForm = {
       document: this.form.get('document').value,
       firstName: this.form.get('firstName').value,
@@ -68,13 +78,34 @@ export class DataFormComponent implements OnInit, OnDestroy {
       address: this.form.get('address').value,
       age: this.form.get('age').value,
       genre: this.form.get('genre').value
-    }
+    };
 
     this.userServ.saveUser(userInfo).subscribe(data => {
-      console.log("Registro guardado exitosamente");
+      console.log("El registro se guardo correctamente");
       this.userServ.getUsersSer();
       this.form.reset();
     });
   }
 
+  editUser() {
+    const userInfo: modDataForm = {
+      id: this.usuario.id,
+      document: this.form.get('document').value,
+      firstName: this.form.get('firstName').value,
+      secondName: this.form.get('secondName').value,
+      lastName: this.form.get('lastName').value,
+      lastName2: this.form.get('lastName2').value,
+      phone: this.form.get('phone').value,
+      email: this.form.get('email').value,
+      address: this.form.get('address').value,
+      age: this.form.get('age').value,
+      genre: this.form.get('genre').value
+    };
+    this.userServ.updateRegister(this.idUsuario, userInfo).subscribe(data => {
+      console.log("El registro se actualizo correctamente");
+      this.userServ.getUsersSer();
+      this.form.reset();
+      this.idUsuario=0;
+    });
+  }
 }

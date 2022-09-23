@@ -25,6 +25,6 @@ ServDataFormService: any;
   }
 
   editUser(user){
-    this.getService.updateUser(user);
+    this.getService.updateUser(user)
   }
 }

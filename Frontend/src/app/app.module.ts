@@ -9,6 +9,7 @@ import { MainFormComponent } from './components/main-form/main-form.component';
 import { DataFormComponent } from './components/main-form/data-form/data-form.component';
 import { ViewFormComponent } from './components/main-form/view-form/view-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { QueryFormComponent } from './components/main-form/query-form/query-form.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { FooterComponent } from './components/footer/footer.component';
     MainFormComponent,
     DataFormComponent,
     ViewFormComponent,
-    FooterComponent
+    FooterComponent,
+    QueryFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

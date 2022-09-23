@@ -1,0 +1,39 @@
+<form (ngSubmit)="sendQuery()">
+<div class="cont">
+    <table class="table table-sm">
+        <tr *ngFor="let register of queryService.list">
+            <td>{{register.firstName}}</td>
+            <td>{{register.secondName}}</td>
+            <td>{{register.age}}</td>
+            <td>{{register.genre}}</td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-success btn-lg">Nombre de todas las personas</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-success btn-lg">Cantidad de Hombres</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-success btn-lg">Cantidad de Mujeres</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-success btn-lg">¿Quien es el mayor?</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-success btn-lg">Promedio de Edad</button>
+        </div>
+    </div>
+</div>
+</form>

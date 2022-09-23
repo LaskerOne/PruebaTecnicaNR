@@ -31,6 +31,11 @@ list: modDataForm[];
     return this.http.delete<modDataForm>(this.urlApp+this.urlApi + id);
   }
 
+  updateRegister(id: number, modelData: modDataForm): Observable<modDataForm>{
+    return this.http.put<modDataForm>(this.urlApp+this.urlApi + id, modelData);
+
+  }
+
   updateUser(user) {
     this.updForm.next(user);
   }

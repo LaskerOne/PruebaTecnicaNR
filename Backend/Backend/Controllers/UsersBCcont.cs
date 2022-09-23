@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend;
 using Backend.Models;
+using Microsoft.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Backend.Controllers
 {
@@ -104,5 +106,7 @@ namespace Backend.Controllers
         {
             return _context.UsersBC.Any(e => e.Id == id);
         }
+
+        
     }
 }
