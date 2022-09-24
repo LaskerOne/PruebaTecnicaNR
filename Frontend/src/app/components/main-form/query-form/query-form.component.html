@@ -1,5 +1,5 @@
-<form (ngSubmit)="sendQuery()">
-<div class="cont">
+<form>
+<div class="cont" >
     <table class="table table-sm">
         <tr *ngFor="let register of queryService.list">
             <td>{{register.firstName}}</td>
@@ -22,7 +22,7 @@
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
-            <button class="btn btn-success btn-lg">Cantidad de Mujeres</button>
+            <button class="btn btn-success btn-lg" (click)="cantMujeres()">Cantidad de Mujeres</button>
         </div>
     </div>
     <div class="input-group">

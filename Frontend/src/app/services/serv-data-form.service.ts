@@ -12,6 +12,7 @@ private urlApp = "https://localhost:44390/";
 private urlApi = "api/UsersBCcont/";
 private updForm = new BehaviorSubject<modDataForm>({} as any)
 list: modDataForm[];
+result;
 
 
   constructor(private http: HttpClient) { }
@@ -45,6 +46,10 @@ list: modDataForm[];
   }
 
   getCountMujeres() {
-    return this.http.get(this.urlApp + this.urlApi);
+    this.http.get(this.urlApp+this.urlApi+"getCountMujeres").toPromise().then(
+      data => {
+        this.result = data;
+      });
+      return this.result
   }
 }

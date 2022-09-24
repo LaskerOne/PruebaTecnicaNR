@@ -1,5 +1,14 @@
 .container {
     display: flex;
+    overflow: hidden;
+    overflow: auto;
+}
+
+.cont {
+    display: block;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
 .btn {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServDataFormService } from 'src/app/services/serv-data-form.service';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-view-form',
@@ -7,7 +8,6 @@ import { ServDataFormService } from 'src/app/services/serv-data-form.service';
   styleUrls: ['./view-form.component.scss']
 })
 export class ViewFormComponent implements OnInit {
-ServDataFormService: any;
 
   constructor(public getService: ServDataFormService) { }
 
@@ -28,7 +28,5 @@ ServDataFormService: any;
     this.getService.updateUser(user)
   }
 
-  cantMujeres() {
-    console.log(this.getService.getCountMujeres());
-  }
+
 }
