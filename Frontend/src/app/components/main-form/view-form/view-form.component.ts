@@ -27,4 +27,8 @@ ServDataFormService: any;
   editUser(user){
     this.getService.updateUser(user)
   }
+
+  cantMujeres() {
+    console.log(this.getService.getCountMujeres());
+  }
 }

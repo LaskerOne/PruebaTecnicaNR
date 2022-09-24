@@ -4,3 +4,13 @@
     flex-wrap: wrap;
     overflow: auto;
 }
+
+.containerButtons {
+    display: flex;
+    overflow: hidden;
+    overflow: auto;
+}
+
+.btn {
+    margin: 20px;
+}

@@ -3,14 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Backend
 {
-    public class ApplicationDBContext: DbContext
+    public class ApplicationDBContext : DbContext
     {
-
-        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options): base(options)
+        //builder
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
 
         }
 
+        
         public DbSet<UsersBC> UsersBC { get; set; }
+
     }
 }

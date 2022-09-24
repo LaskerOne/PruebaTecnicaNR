@@ -1,4 +1,8 @@
 body{
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
+}
+
+.col-md-12{
+    margin-top: 40px;
 }

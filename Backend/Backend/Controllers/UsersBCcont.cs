@@ -107,6 +107,56 @@ namespace Backend.Controllers
             return _context.UsersBC.Any(e => e.Id == id);
         }
 
-        
+        [HttpGet("getCantMujeres")]
+        public List<UsersBC> getCantMujeres()
+        {
+            var usersBC = _context.UsersBC.Where(b => b.genre.Equals("Female")).ToList();
+
+            return usersBC;
+        }
+
+        [HttpGet("getCountMujeres")]
+        public int getCountMujeres()
+        {
+            var usersBC = _context.UsersBC.Count(b => b.genre.Equals("Female"));
+
+            return usersBC;
+        }
+
+        [HttpGet("getCantHombres")]
+        public List<UsersBC> getCantHombres()
+        {
+            var usersBC = _context.UsersBC.Where(b => b.genre.Equals("Male")).ToList();
+
+            return usersBC;
+        }
+
+        [HttpGet("getCountHombres")]
+        public int getCountHombres()
+        {
+            var usersBC = _context.UsersBC.Count(b => b.genre.Equals("Male"));
+
+            return usersBC;
+        }
+
+        //  select AVG(age) as PromedioEdad from UsersBC
+
+        [HttpGet("percentAge")]
+        public double percentAge()
+        {
+            var result = _context.UsersBC.Select(x => x.age).Average();
+
+            return result;
+        }
+
+        [HttpGet("nameOfPersonMaxAge")]
+        public List<UsersBC> nameOfPersonMaxAge(){
+
+            var usr = _context.UsersBC.Max(x => x.age);
+
+            var nameusr = _context.UsersBC.Where(x => x.age.Equals(usr)).ToList();
+
+            return nameusr;
+        }
     }
 }

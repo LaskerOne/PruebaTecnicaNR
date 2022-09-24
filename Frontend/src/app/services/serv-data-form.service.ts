@@ -43,4 +43,8 @@ list: modDataForm[];
   getRegisterToUpdate(): Observable<modDataForm> {
     return this.updForm.asObservable();
   }
+
+  getCountMujeres() {
+    return this.http.get(this.urlApp + this.urlApi);
+  }
 }
