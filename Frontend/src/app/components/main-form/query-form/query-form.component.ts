@@ -9,19 +9,21 @@ import { ServDataFormService } from 'src/app/services/serv-data-form.service';
 })
 export class QueryFormComponent implements OnInit {
   form: FormGroup;
-  result
 
   constructor(public queryService: ServDataFormService) { }
 
   ngOnInit(): void {
+    this.queryService.getUsersSer();
   }
 
   sendQuery(){
     console.log("hago la peticion para mostrar en la tabla el resultado del servicio");
   }
 
-  cantMujeres() {
-    tthis.queryService.getCountMujeres();
+  /*acá trató de llamarlo para poder realizar la ejecución, por ahora estoy validando todo desde la consola
+  del navegador porqué traté de hacerlo con Toastr y me marca un error*/ 
+  cantMujeres(){
+    this.queryService.getCountMujeres();
   }
 
 }

@@ -45,6 +45,8 @@ result;
     return this.updForm.asObservable();
   }
 
+  /*Este es el servicio que quiero llamar y aquí lo elabore. La idea es que muestre el resultado de una
+  consulta que hace el servicio del lado del back*/
   getCountMujeres() {
     this.http.get(this.urlApp+this.urlApi+"getCountMujeres").toPromise().then(
       data => {

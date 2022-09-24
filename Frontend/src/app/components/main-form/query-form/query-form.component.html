@@ -1,6 +1,9 @@
 <form>
 <div class="cont" >
     <table class="table table-sm">
+        <!--Esto lo tengo solo como referencia ya que quiero mostrar los resultados de las consultas
+        al momento de pulsar el botón determinado, aunque también estoy pensando en mostrar el resultado
+    como un PopUp-->
         <tr *ngFor="let register of queryService.list">
             <td>{{register.firstName}}</td>
             <td>{{register.secondName}}</td>
