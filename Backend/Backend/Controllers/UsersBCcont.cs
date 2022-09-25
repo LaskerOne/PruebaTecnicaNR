@@ -9,6 +9,7 @@ using Backend;
 using Backend.Models;
 using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Backend.Controllers
 {
@@ -154,10 +155,21 @@ namespace Backend.Controllers
         public List<UsersBC> nameOfPersonMaxAge(){
 
             var usr = _context.UsersBC.Max(x => x.age);
-
             var nameusr = _context.UsersBC.Where(x => x.age.Equals(usr)).ToList();
 
             return nameusr;
         }
+
+        
+        /*[HttpGet("nameOfPersonMaxAge")]
+        public List<UsersBC> nameOfPersonMaxAge()
+        {
+
+            var MaxAge = (from User in _context.UsersBC
+                          where age.Max()
+                          select firstName, secondName, lastName, lastName2).FirstOrDefault();
+
+            return MaxAge;
+        }*/
     }
 }
