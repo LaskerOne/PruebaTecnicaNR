@@ -33,11 +33,9 @@ export class DataFormComponent implements OnInit, OnDestroy {
 
     })
    }
-  ngOnDestroy(): void {
-    this.sucription.unsubscribe();
-  }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    
     this.suscription = this.userServ.getRegisterToUpdate().subscribe(dataO => {
       console.log(dataO);
       this.usuario = dataO;
@@ -53,8 +51,12 @@ export class DataFormComponent implements OnInit, OnDestroy {
         age: this.usuario.age,
         genre: this.usuario.genre
       });
-      this.idUsuario = this.usuario.id;
+      this.idUsuario = this.usuario.id
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sucription.unsubscribe();
   }
 
   sendForm() {

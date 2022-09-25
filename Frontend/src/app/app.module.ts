@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { MainFormComponent } from './components/main-form/main-form.component';
 import { DataFormComponent } from './components/main-form/data-form/data-form.component';
 import { ViewFormComponent } from './components/main-form/view-form/view-form.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { QueryFormComponent } from './components/main-form/query-form/query-form.component';
 
 @NgModule({
@@ -17,15 +16,13 @@ import { QueryFormComponent } from './components/main-form/query-form/query-form
     MainFormComponent,
     DataFormComponent,
     ViewFormComponent,
-    FooterComponent,
     QueryFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

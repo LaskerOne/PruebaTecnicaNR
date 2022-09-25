@@ -159,17 +159,5 @@ namespace Backend.Controllers
 
             return nameusr;
         }
-
-        
-        /*[HttpGet("nameOfPersonMaxAge")]
-        public List<UsersBC> nameOfPersonMaxAge()
-        {
-
-            var MaxAge = (from User in _context.UsersBC
-                          where age.Max()
-                          select firstName, secondName, lastName, lastName2).FirstOrDefault();
-
-            return MaxAge;
-        }*/
     }
 }

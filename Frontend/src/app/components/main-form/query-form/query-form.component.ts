@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { ServDataFormService } from 'src/app/services/serv-data-form.service';
 import { modDataForm } from 'src/app/models/modDataForm';
 
@@ -9,12 +8,10 @@ import { modDataForm } from 'src/app/models/modDataForm';
   styleUrls: ['./query-form.component.scss']
 })
 export class QueryFormComponent implements OnInit {
-  registro: modDataForm[];
-  form: FormGroup;
   cantidadMujeres;
   cantidadHombres;
   promedioEdad;
-  personaMayor: modDataForm;
+  personaMayor: modDataForm[];
 
   constructor(public queryService: ServDataFormService) { }
 
@@ -35,11 +32,6 @@ export class QueryFormComponent implements OnInit {
   }
 
   quienEsMayor(){
-    this.queryService.mayorDeLaLista().subscribe(mayor =>  { this.registro[this.personaMayor.firstName, 
-                    this.personaMayor.secondName.valueOf,
-                    this.personaMayor.lastName,
-                    this.personaMayor.lastName2] = mayor;
-                    this.queryService.getUsersSer()});
-  };
-
+      this.queryService.mayorDeLaLista().subscribe(mayor =>  { this.personaMayor = mayor as modDataForm[]});
+  }
 }

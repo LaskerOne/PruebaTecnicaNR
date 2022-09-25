@@ -8,7 +8,7 @@
                     <i class="fas fa-id-card" [class.green-icon]="this.form.get('document').valid"></i>
                 </div>
             </div>
-            <input type="text" class="form-control" formControlName="document" placeholder="Identity Document">
+            <input type="text" class="form-control" minlength="7" maxlength="15" formControlName="document" placeholder="Identity Document">
         </div>
     </div>
 
@@ -20,7 +20,7 @@
                 <i class="fas fa-user-circle" [class.green-icon]="this.form.get('firstName').valid"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="firstName" placeholder="first Name">
+        <input type="text" class="form-control" minlength="3" maxlength="25" formControlName="firstName" placeholder="first Name">
     </div>
 </div>
 
@@ -32,7 +32,7 @@
                 <i class="fas fa-user-circle"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="secondName" placeholder="second Name">
+        <input type="text" class="form-control" minlength="1" maxlength="25" formControlName="secondName" placeholder="second Name">
     </div>
 </div>
 
@@ -44,7 +44,7 @@
                 <i class="fas fa-user-circle" [class.green-icon]="this.form.get('lastName').valid"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="lastName" placeholder="last Name">
+        <input type="text" class="form-control" minlength="3" maxlength="25" formControlName="lastName" placeholder="last Name">
     </div>
 </div>
 <!--Campo segundo apellido-->
@@ -55,7 +55,7 @@
                 <i class="fas fa-user-circle"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="lastName2" placeholder="last Name" value="">
+        <input type="text" class="form-control" minlength="1" maxlength="25" formControlName="lastName2" placeholder="last Name" value="">
     </div>
 </div>
 <!--Campo telefono-->
@@ -66,7 +66,7 @@
                 <i class="fas fa-mobile"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="phone" placeholder="phone number" value="">
+        <input type="text" class="form-control" minlength="1" maxlength="15" formControlName="phone" placeholder="phone number" value="">
     </div>
 </div>
 <!--campo email-->
@@ -77,7 +77,7 @@
                 <i class="fas fa-at"></i>
             </div>
         </div>
-        <input type="text" class="form-control" formControlName="email" placeholder="email" value="">
+        <input type="email" class="form-control" formControlName="email" placeholder="email" value="">
     </div>
 </div>
 <!--campo dirección-->
@@ -102,7 +102,7 @@
                         <i class="fas fa-child" [class.green-icon]="this.form.get('age').valid"></i>
                     </div>
                 </div>
-                <input type="number" min="15" max="80" maxlength="2" class="form-control"  formControlName="age" placeholder="age">
+                <input type="number" min="15" max="80" minLength="2" maxlength="2" class="form-control"  formControlName="age" placeholder="age">
             </div>
         </div>
     </div>
