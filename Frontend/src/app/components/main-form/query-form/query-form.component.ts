@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ServDataFormService } from 'src/app/services/serv-data-form.service';
+import { modDataForm } from 'src/app/models/modDataForm';
 
 @Component({
   selector: 'app-query-form',
@@ -8,7 +9,12 @@ import { ServDataFormService } from 'src/app/services/serv-data-form.service';
   styleUrls: ['./query-form.component.scss']
 })
 export class QueryFormComponent implements OnInit {
+  registro: modDataForm[];
   form: FormGroup;
+  cantidadMujeres;
+  cantidadHombres;
+  promedioEdad;
+  personaMayor: modDataForm;
 
   constructor(public queryService: ServDataFormService) { }
 
@@ -16,14 +22,24 @@ export class QueryFormComponent implements OnInit {
     this.queryService.getUsersSer();
   }
 
-  sendQuery(){
-    console.log("hago la peticion para mostrar en la tabla el resultado del servicio");
+  cantMujeres(){
+    this.queryService.getCountMujeres().subscribe (cantidad => { this.cantidadMujeres = cantidad});
   }
 
-  /*acá trató de llamarlo para poder realizar la ejecución, por ahora estoy validando todo desde la consola
-  del navegador porqué traté de hacerlo con Toastr y me marca un error*/ 
-  cantMujeres(){
-    this.queryService.getCountMujeres();
+  cantHombres(){
+    this.queryService.getCountHombres().subscribe (cantidad => { this.cantidadHombres = cantidad});
   }
+
+  avgEdades(){
+    this.queryService.getPromedioEdad().subscribe (cantidad => { this.promedioEdad = cantidad});
+  }
+
+  quienEsMayor(){
+    this.queryService.mayorDeLaLista().subscribe(mayor =>  { this.registro[this.personaMayor.firstName, 
+                    this.personaMayor.secondName.valueOf,
+                    this.personaMayor.lastName,
+                    this.personaMayor.lastName2] = mayor;
+                    this.queryService.getUsersSer()});
+  };
 
 }

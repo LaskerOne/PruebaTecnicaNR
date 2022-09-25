@@ -1,14 +1,26 @@
 <div class="container">
     <table class="table table-sm">
+        <tr>
+            <th>Document </th>
+            <th>firstName </th>
+            <th>secondName </th>
+            <th>lastName </th>
+            <th>lastName </th>
+            <th>phone </th>
+            <th>email </th>
+            <th>address </th>
+            <th>age </th>
+            <th>genre </th>
+        </tr>
         <tr *ngFor="let register of  getService.list">
-            <td>{{register.document}}</td>
-            <td>{{register.firstName}}</td>
-            <td>{{register.secondName}}</td>
-            <td>{{register.lastName}}</td>
-            <td>{{register.lastName2}}</td>
-            <td>{{register.phone}}</td>
-            <td>{{register.email}}</td>
-            <td>{{register.address}}</td>
+            <td>{{register.document}} </td>
+            <td>{{register.firstName}} </td>
+            <td>{{register.secondName}} </td>
+            <td>{{register.lastName}} </td>
+            <td>{{register.lastName2}} </td>
+            <td>{{register.phone}} </td>
+            <td>{{register.email}} </td>
+            <td>{{register.address}} </td>
             <td>{{register.age}}</td>
             <td>{{register.genre}}</td>
             <td>

@@ -12,5 +12,12 @@
 }
 
 .btn {
-    margin: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.btn:hover{
+    border-radius: 20%;
+    background: #0000FF;
 }

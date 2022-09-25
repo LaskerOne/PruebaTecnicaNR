@@ -20,7 +20,7 @@ export class DataFormComponent implements OnInit, OnDestroy {
               private userServ: ServDataFormService) {
     this.form = this.formBuilder.group({
       id: 0,
-      document: ['',[Validators.required, Validators.minLength(7)]],
+      document: ['',[Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
       firstName: ['',[Validators.required, Validators.minLength(3)]],
       secondName: ['',[]],
       lastName: ['',[Validators.required, Validators.minLength(3)]],

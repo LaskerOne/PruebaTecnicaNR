@@ -1,26 +1,34 @@
-<form>
+
 <div class="cont" >
     <table class="table table-sm">
-        <!--Esto lo tengo solo como referencia ya que quiero mostrar los resultados de las consultas
-        al momento de pulsar el botón determinado, aunque también estoy pensando en mostrar el resultado
-    como un PopUp-->
-        <tr *ngFor="let register of queryService.list">
-            <td>{{register.firstName}}</td>
-            <td>{{register.secondName}}</td>
-            <td>{{register.age}}</td>
-            <td>{{register.genre}}</td>
-        </tr>
+            <th>resultados</th>
+            <tr>
+                <th>Cantidad de Mujeres: </th><td>{{cantidadMujeres}}</td>
+                
+            </tr>
+            
+            <tr>
+                <th>Cantidad de Hombres: </th><td>{{cantidadHombres}}</td>
+            </tr>
+            
+            <tr>
+                <th>Promedio de edad: </th><td>{{promedioEdad}}</td>
+            </tr>
+
+            <tr>
+                <th>El mayor de la lista: </th><td>{{personaMayor}}</td>
+            </tr>
     </table>
 </div>
 <div class="container">
-    <div class="input-group">
+    <!--<div class="input-group">
         <div class="input-group-prepend">
             <button class="btn btn-success btn-lg">Nombre de todas las personas</button>
         </div>
-    </div>
+    </div>-->
     <div class="input-group">
         <div class="input-group-prepend">
-            <button class="btn btn-success btn-lg">Cantidad de Hombres</button>
+            <button class="btn btn-success btn-lg" (click)="cantHombres()">Cantidad de Hombres</button>
         </div>
     </div>
     <div class="input-group">
@@ -30,13 +38,12 @@
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
-            <button class="btn btn-success btn-lg">¿Quien es el mayor?</button>
+            <button class="btn btn-success btn-lg" (click)="quienEsMayor()">¿Quien es el mayor?</button>
         </div>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
-            <button class="btn btn-success btn-lg">Promedio de Edad</button>
+            <button class="btn btn-success btn-lg" (click)="avgEdades()">Promedio de Edad</button>
         </div>
     </div>
 </div>
-</form>

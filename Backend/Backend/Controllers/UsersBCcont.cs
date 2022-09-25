@@ -149,6 +149,7 @@ namespace Backend.Controllers
             return result;
         }
 
+        //SELECT firstName, secondName, lastName, lastName2 FROM UsersBC WHERE age=(SELECT MAX(age) FROM UsersBC);
         [HttpGet("nameOfPersonMaxAge")]
         public List<UsersBC> nameOfPersonMaxAge(){
 

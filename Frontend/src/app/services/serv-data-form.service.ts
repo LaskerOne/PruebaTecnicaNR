@@ -12,8 +12,6 @@ private urlApp = "https://localhost:44390/";
 private urlApi = "api/UsersBCcont/";
 private updForm = new BehaviorSubject<modDataForm>({} as any)
 list: modDataForm[];
-result;
-
 
   constructor(private http: HttpClient) { }
 
@@ -45,13 +43,20 @@ result;
     return this.updForm.asObservable();
   }
 
-  /*Este es el servicio que quiero llamar y aquí lo elabore. La idea es que muestre el resultado de una
-  consulta que hace el servicio del lado del back*/
   getCountMujeres() {
-    this.http.get(this.urlApp+this.urlApi+"getCountMujeres").toPromise().then(
-      data => {
-        this.result = data;
-      });
-      return this.result
+    return this.http.get(this.urlApp+this.urlApi+"getCountMujeres");
+  }
+
+  getCountHombres(): Observable<modDataForm> {
+    return this.http.get<modDataForm>(this.urlApp+this.urlApi+"getCountHombres");
+  }
+
+  getPromedioEdad() {
+    return this.http.get(this.urlApp+this.urlApi+"percentAge");
+  }
+
+  
+  mayorDeLaLista() {
+    return this.http.get(this.urlApp+this.urlApi+"nameOfPersonMaxAge");
   }
 }
