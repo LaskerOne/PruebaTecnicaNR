@@ -13,12 +13,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Backend.Controllers
 {
+    //Métodos de la API para realizar consultas a la base de datos
     [Route("api/UsersBCcont")]
     [ApiController]
     public class UsersBCcont : ControllerBase
     {
         private readonly ApplicationDBContext _context;
 
+        //inyección de dependencias
         public UsersBCcont(ApplicationDBContext context)
         {
             _context = context;

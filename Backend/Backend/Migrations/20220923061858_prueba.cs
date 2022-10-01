@@ -6,8 +6,10 @@ namespace Backend.Migrations
 {
     public partial class prueba : Migration
     {
+        //Migración de la base de datos
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            //El método elaborado por Entity para crear la tabla donde se almacenaran los registros
             migrationBuilder.CreateTable(
                 name: "UsersBC",
                 columns: table => new
@@ -31,10 +33,13 @@ namespace Backend.Migrations
                 });
         }
 
+        //Método creado por entity para eliminar la tabla de la base de datos en caso de requerirse
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "UsersBC");
         }
+
+        
     }
 }

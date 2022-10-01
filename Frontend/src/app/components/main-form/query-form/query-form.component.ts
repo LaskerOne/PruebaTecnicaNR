@@ -32,6 +32,7 @@ export class QueryFormComponent implements OnInit {
   }
 
   quienEsMayor(){
+    //Anotation
       this.queryService.mayorDeLaLista().subscribe(mayor =>  { this.personaMayor = mayor as modDataForm[]});
   }
 }

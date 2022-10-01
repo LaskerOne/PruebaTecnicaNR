@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Backend.Models
 {
+    //Modelo de la base de datos inicial para su creación a partir de Entity Framework
     public class UsersBC
     {
         [Key]

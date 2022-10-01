@@ -16,6 +16,7 @@ export class DataFormComponent implements OnInit, OnDestroy {
   usuario: modDataForm;
   idUsuario = 0;
 
+  //Creación del formulario reactivo
   constructor(private formBuilder: FormBuilder,
               private userServ: ServDataFormService) {
     this.form = this.formBuilder.group({
@@ -35,7 +36,7 @@ export class DataFormComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit(): void {
-    
+
     this.suscription = this.userServ.getRegisterToUpdate().subscribe(dataO => {
       console.log(dataO);
       this.usuario = dataO;
@@ -59,6 +60,7 @@ export class DataFormComponent implements OnInit, OnDestroy {
     this.sucription.unsubscribe();
   }
 
+  //Anotation
   sendForm() {
     if(this.idUsuario === 0){
       this.addUser();

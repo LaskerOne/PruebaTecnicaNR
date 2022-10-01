@@ -55,8 +55,9 @@ list: modDataForm[];
     return this.http.get(this.urlApp+this.urlApi+"percentAge");
   }
 
-  
+
   mayorDeLaLista() {
+
     return this.http.get(this.urlApp+this.urlApi+"nameOfPersonMaxAge");
   }
 }
